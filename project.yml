@@ -1,0 +1,28 @@
+name: StreamingVideo
+options:
+  bundleIdPrefix: net.fenki.default2
+  deploymentTarget:
+    iOS: '13.0'
+packages:
+  RxSwift:
+    url: https://github.com/ReactiveX/RxSwift.git
+    from: "6.2.0"
+  SnapKit:
+    url: https://github.com/SnapKit/SnapKit.git
+    from: "5.0.0"
+targets:
+  rxswift_snapkit:
+    type: application
+    platform: iOS
+    sources: [Sources/rxswift_snapkit]
+    resources: [Resources/Info.plist]
+    dependencies:
+      - package: RxSwift
+      - package: SnapKit
+    settings:
+      base:
+        INFOPLIST_FILE: "Resources/Info.plist"
+        PRODUCT_BUNDLE_IDENTIFIER: "net.fenki.default2"
+        SWIFT_VERSION: "5.0"
+        DEVELOPMENT_LANGUAGE: "en"
+        EXECUTABLE_NAME: "rxswift_snapkit"
