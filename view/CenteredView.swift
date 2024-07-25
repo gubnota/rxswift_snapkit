@@ -42,7 +42,7 @@ class CenteredView: BaseView {
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
-struct ButtonView_Previews: PreviewProvider {
+struct CenteredView_Previews: PreviewProvider {
     static var previews: some View {
         UIViewPreview {
             return CenteredView()

@@ -50,11 +50,7 @@ class PostView: UIView {
     
     func setupView() {
         // cosmetics
-        if #available(iOS 13.0, *) {
             backgroundColor = .systemBackground
-        } else {
-            // Fallback on earlier versions
-        }
         
         // constraints
         scrollView.addSubview(bodyStackView)
@@ -73,14 +69,26 @@ class PostView: UIView {
     }
 }
 
-//#if DEBUG
-//import SwiftUI
-//
-//@available(iOS 13, *)
-//struct PostView_Preview: PreviewProvider {
-//    static var previews: some View {
-//        // view controller using programmatic UI
-//        PostView().showPreview()
-//    }
-//}
-//#endif
+#if canImport(SwiftUI) && DEBUG
+import SwiftUI
+struct PostView_Previews: PreviewProvider {
+    static var previews: some View {
+        UIViewPreview {
+            let postView = PostView()
+
+            // demo data from a DemoStore singleton or other source
+            let store = DemoStore.shared
+            let postTitle = store.postTitle
+            let postSubtitle = store.postDetails
+            
+            postView.postTitleLabel.text = postTitle
+            postView.textView.text = postSubtitle
+            
+            return postView
+        }
+        .previewLayout(.sizeThatFits)
+        .frame(width: 300, height: 150) // Adjust frame as needed
+        .padding()
+    }
+}
+#endif

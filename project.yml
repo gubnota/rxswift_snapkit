@@ -15,7 +15,7 @@ targets:
     type: application
     platform: iOS
     sources: [Sources/rxswift_snapkit]
-    resources: [Resources/Info.plist]
+    resources: [Resources/Info.plist, Media.xcassets]
     dependencies:
       - package: RxSwift
       - package: SnapKit
@@ -26,3 +26,4 @@ targets:
         SWIFT_VERSION: "5.0"
         DEVELOPMENT_LANGUAGE: "en"
         EXECUTABLE_NAME: "rxswift_snapkit"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon

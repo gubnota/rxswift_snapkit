@@ -4,34 +4,53 @@ import RxSwift
 import RxCocoa
 
 class LoginViewController: UIViewController {
+    var viewModel: AppViewModel? // Injected ViewModel
     private let disposeBag = DisposeBag()
+
     private let usernameTextField = UITextField()
     private let passwordTextField = UITextField()
     private let loginButton = BaseButton(type: .system)
-    
-    static var lastUsername: String?
-    static var lastPassword: String?
-    
+
     lazy var centeredView: UIView = {
         let view = CenteredView()
         return view
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         bindUI()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Re-bind or refresh UI with viewModel data
+        refreshUI()
+    }
+
+    private func refreshUI() {
+        guard let viewModel = viewModel else { return }
+
+        // Update UI elements with the latest data
+        usernameTextField.text = viewModel.lastUsername.value
+        passwordTextField.text = viewModel.lastPassword.value
+
+        // Enable or disable the login button based on the validity of the input fields
+        let usernameValid = (usernameTextField.text ?? "").count >= 5
+        let passwordValid = (passwordTextField.text ?? "").count >= 5
+        let isValid = usernameValid && passwordValid
+
+        loginButton.isEnabled = isValid
+        loginButton.backgroundColor = isValid ? UIColor(hex: "#443399") : UIColor(hex: "#999999")
+    }
+    
     private func setupUI() {
         view.backgroundColor = .white
 
         // Set placeholders and styling for the text fields
         usernameTextField.placeholder = "Username"
-        usernameTextField.text = LoginViewController.lastUsername
         usernameTextField.borderStyle = .roundedRect
         passwordTextField.placeholder = "Password"
-        passwordTextField.text = LoginViewController.lastPassword
         passwordTextField.isSecureTextEntry = true
         passwordTextField.borderStyle = .roundedRect
         
@@ -75,48 +94,49 @@ class LoginViewController: UIViewController {
     }
 
     private func bindUI() {
+        guard let viewModel = viewModel else { return }
+
         let usernameValid = usernameTextField.rx.text.orEmpty
             .map { $0.count >= 5 }
             .share(replay: 1)
-        
+
         let passwordValid = passwordTextField.rx.text.orEmpty
             .map { $0.count >= 5 }
             .share(replay: 1)
 
         let everythingValid = Observable.combineLatest(usernameValid, passwordValid) { $0 && $1 }
-        
+
         everythingValid
             .bind(to: loginButton.rx.isEnabled)
             .disposed(by: disposeBag)
-        
+
         everythingValid
             .map { $0 ? UIColor(hex: "#443399") : UIColor(hex: "#999999") }
             .bind(to: loginButton.rx.backgroundColor)
             .disposed(by: disposeBag)
-        
+
         loginButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 let username = self.usernameTextField.text ?? ""
                 let password = self.passwordTextField.text ?? ""
-                if username == "admin" && password == "admin" {
-                    self.showProfileViewController(withUsername: username, andPassword: password)
-                }
+                viewModel.lastUsername.accept(username)
+                viewModel.lastPassword.accept(password)
+                self.showProfileViewController(withUsername: username, andPassword: password)
             })
             .disposed(by: disposeBag)
     }
 
     private func showProfileViewController(withUsername username: String, andPassword password: String) {
         let profileVC = ProfileViewController(username: username, password: password)
-        profileVC.modalPresentationStyle = .fullScreen
-        self.present(profileVC, animated: true, completion: nil)
+        profileVC.viewModel = viewModel // Pass the ViewModel to the ProfileViewController
+        //        self.present(profileVC, animated: true, completion: nil)
+        navigationController?.pushViewController(profileVC, animated: true)
     }
 }
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
-
-@available(iOS 13.0, *)
 struct LoginViewControllerPreview: PreviewProvider {
     static var previews: some View {
         LoginViewController().toPreview()

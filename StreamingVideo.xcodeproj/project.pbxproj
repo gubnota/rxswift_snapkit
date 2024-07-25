@@ -10,13 +10,17 @@
 		115F85EDCC3F1059BEF2CD47 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A0B1E2F4BBB0792CE10B15 /* BaseView.swift */; };
 		43D221EFBA0CB4186673837A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E89C600E74BA0E938078B0D1 /* SnapKit */; };
 		6112491021A54BC6E9679B9A /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38A6AC955EC6767DA2EE81B /* ColorExtensions.swift */; };
-		85117D0BD534F1C2F7BD0027 /* rxswift_snapkit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF05D0506F932177EC0DB48 /* rxswift_snapkit.swift */; };
 		9465FF432C522BA000F3895F /* CenteredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9465FF422C522BA000F3895F /* CenteredView.swift */; };
 		9465FF452C522D9C00F3895F /* UIViewPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9465FF442C522D9C00F3895F /* UIViewPreviewWrapper.swift */; };
+		946CF7C02C52E2A400EB22AD /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946CF7BF2C52E2A400EB22AD /* MyScrollView.swift */; };
+		946CF7C22C52E5BD00EB22AD /* MyUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946CF7C12C52E5BD00EB22AD /* MyUILabel.swift */; };
+		946CF7C42C52EEDD00EB22AD /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946CF7C32C52EEDD00EB22AD /* ScrollViewController.swift */; };
+		94B2FD752C52948700637C0E /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2FD742C52948600637C0E /* AppViewModel.swift */; };
+		94B2FD782C5294B500637C0E /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2FD772C5294B500637C0E /* EntryViewController.swift */; };
+		94B2FD7A2C52978600637C0E /* Media.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 94B2FD792C5295E700637C0E /* Media.xcassets */; };
+		94D512122C52D7410015FA5B /* VerticalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D512112C52D7410015FA5B /* VerticalView.swift */; };
 		94E924392C521A9A0042851D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 94E924382C521A9A0042851D /* RxCocoa */; };
 		94E9243B2C521B6B0042851D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9243A2C521B6B0042851D /* AppDelegate.swift */; };
-		94E9243D2C521EE70042851D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9243C2C521EE70042851D /* ViewController.swift */; };
-		94E9243F2C521F0B0042851D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E9243E2C521F0B0042851D /* HeaderView.swift */; };
 		94E924412C521F170042851D /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E924402C521F170042851D /* PostView.swift */; };
 		94E924432C521F370042851D /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E924422C521F370042851D /* ButtonView.swift */; };
 		94E924452C521F500042851D /* DemoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E924442C521F500042851D /* DemoStore.swift */; };
@@ -31,13 +35,17 @@
 		237E355D6BFAEFDE3BD7A7E5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		446CCC8E14B516513FA9E726 /* rxswift_snapkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rxswift_snapkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2DCD6A830F9D5D0353CD26 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		8DF05D0506F932177EC0DB48 /* rxswift_snapkit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rxswift_snapkit.swift; sourceTree = "<group>"; };
 		9465FF422C522BA000F3895F /* CenteredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredView.swift; sourceTree = "<group>"; };
 		9465FF442C522D9C00F3895F /* UIViewPreviewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewPreviewWrapper.swift; sourceTree = "<group>"; };
+		946CF7BF2C52E2A400EB22AD /* MyScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
+		946CF7C12C52E5BD00EB22AD /* MyUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUILabel.swift; sourceTree = "<group>"; };
+		946CF7C32C52EEDD00EB22AD /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		94B2FD742C52948600637C0E /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		94B2FD772C5294B500637C0E /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		94B2FD792C5295E700637C0E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		94D512112C52D7410015FA5B /* VerticalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalView.swift; sourceTree = "<group>"; };
 		94E924362C5218F80042851D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94E9243A2C521B6B0042851D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94E9243C2C521EE70042851D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		94E9243E2C521F0B0042851D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		94E924402C521F170042851D /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		94E924422C521F370042851D /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		94E924442C521F500042851D /* DemoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoStore.swift; sourceTree = "<group>"; };
@@ -68,35 +76,62 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1717A89B158261469B4A0464 /* rxswift_snapkit */ = {
-			isa = PBXGroup;
-			children = (
-				13A0B1E2F4BBB0792CE10B15 /* BaseView.swift */,
-				D38A6AC955EC6767DA2EE81B /* ColorExtensions.swift */,
-				237E355D6BFAEFDE3BD7A7E5 /* LoginViewController.swift */,
-				7C2DCD6A830F9D5D0353CD26 /* ProfileViewController.swift */,
-				9465FF422C522BA000F3895F /* CenteredView.swift */,
-				94E9243C2C521EE70042851D /* ViewController.swift */,
-				94E924442C521F500042851D /* DemoStore.swift */,
-				94E9243E2C521F0B0042851D /* HeaderView.swift */,
-				94E924422C521F370042851D /* ButtonView.swift */,
-				94E924402C521F170042851D /* PostView.swift */,
-				8DF05D0506F932177EC0DB48 /* rxswift_snapkit.swift */,
-				94E9243A2C521B6B0042851D /* AppDelegate.swift */,
-				94E924492C52215C0042851D /* UIViewControllerExtension.swift */,
-				9465FF442C522D9C00F3895F /* UIViewPreviewWrapper.swift */,
-			);
-			name = rxswift_snapkit;
-			path = Sources/rxswift_snapkit;
-			sourceTree = "<group>";
-		};
 		4AC2E4F58297291B89B71DDC = {
 			isa = PBXGroup;
 			children = (
+				94E9243A2C521B6B0042851D /* AppDelegate.swift */,
+				94D512102C52C5050015FA5B /* ext */,
+				94B2FD792C5295E700637C0E /* Media.xcassets */,
+				94D5120F2C52C4E90015FA5B /* view */,
+				94B2FD762C5294A200637C0E /* controller */,
+				94B2FD732C52947A00637C0E /* model */,
 				94E924372C5218F80042851D /* Resources */,
-				1717A89B158261469B4A0464 /* rxswift_snapkit */,
 				0B50D0FB51E3678FD03FC4E9 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		94B2FD732C52947A00637C0E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				94E924442C521F500042851D /* DemoStore.swift */,
+				94B2FD742C52948600637C0E /* AppViewModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		94B2FD762C5294A200637C0E /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				94B2FD772C5294B500637C0E /* EntryViewController.swift */,
+				237E355D6BFAEFDE3BD7A7E5 /* LoginViewController.swift */,
+				7C2DCD6A830F9D5D0353CD26 /* ProfileViewController.swift */,
+				946CF7C32C52EEDD00EB22AD /* ScrollViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		94D5120F2C52C4E90015FA5B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				13A0B1E2F4BBB0792CE10B15 /* BaseView.swift */,
+				9465FF422C522BA000F3895F /* CenteredView.swift */,
+				94E924422C521F370042851D /* ButtonView.swift */,
+				94E924402C521F170042851D /* PostView.swift */,
+				94D512112C52D7410015FA5B /* VerticalView.swift */,
+				946CF7BF2C52E2A400EB22AD /* MyScrollView.swift */,
+				946CF7C12C52E5BD00EB22AD /* MyUILabel.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		94D512102C52C5050015FA5B /* ext */ = {
+			isa = PBXGroup;
+			children = (
+				D38A6AC955EC6767DA2EE81B /* ColorExtensions.swift */,
+				94E924492C52215C0042851D /* UIViewControllerExtension.swift */,
+				9465FF442C522D9C00F3895F /* UIViewPreviewWrapper.swift */,
+			);
+			path = ext;
 			sourceTree = "<group>";
 		};
 		94E924372C5218F80042851D /* Resources */ = {
@@ -167,20 +202,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B2FD7A2C52978600637C0E /* Media.xcassets in Sources */,
 				94E9243B2C521B6B0042851D /* AppDelegate.swift in Sources */,
 				9465FF452C522D9C00F3895F /* UIViewPreviewWrapper.swift in Sources */,
 				115F85EDCC3F1059BEF2CD47 /* BaseView.swift in Sources */,
+				94B2FD782C5294B500637C0E /* EntryViewController.swift in Sources */,
 				94E924432C521F370042851D /* ButtonView.swift in Sources */,
 				6112491021A54BC6E9679B9A /* ColorExtensions.swift in Sources */,
+				946CF7C42C52EEDD00EB22AD /* ScrollViewController.swift in Sources */,
 				EFF03B43E9A6B55CB7D9F40B /* LoginViewController.swift in Sources */,
-				94E9243D2C521EE70042851D /* ViewController.swift in Sources */,
 				D5134908923797635FFEB327 /* ProfileViewController.swift in Sources */,
 				9465FF432C522BA000F3895F /* CenteredView.swift in Sources */,
+				94B2FD752C52948700637C0E /* AppViewModel.swift in Sources */,
 				94E924452C521F500042851D /* DemoStore.swift in Sources */,
-				85117D0BD534F1C2F7BD0027 /* rxswift_snapkit.swift in Sources */,
+				946CF7C02C52E2A400EB22AD /* MyScrollView.swift in Sources */,
+				94D512122C52D7410015FA5B /* VerticalView.swift in Sources */,
 				94E9244A2C52215C0042851D /* UIViewControllerExtension.swift in Sources */,
 				94E924412C521F170042851D /* PostView.swift in Sources */,
-				94E9243F2C521F0B0042851D /* HeaderView.swift in Sources */,
+				946CF7C22C52E5BD00EB22AD /* MyUILabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +230,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_LANGUAGE = en;
 				DEVELOPMENT_TEAM = RSD67YH647;
@@ -275,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_LANGUAGE = en;
 				DEVELOPMENT_TEAM = RSD67YH647;
