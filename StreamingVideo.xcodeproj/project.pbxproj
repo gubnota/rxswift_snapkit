@@ -15,6 +15,16 @@
 		946CF7C02C52E2A400EB22AD /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946CF7BF2C52E2A400EB22AD /* MyScrollView.swift */; };
 		946CF7C22C52E5BD00EB22AD /* MyUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946CF7C12C52E5BD00EB22AD /* MyUILabel.swift */; };
 		946CF7C42C52EEDD00EB22AD /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946CF7C32C52EEDD00EB22AD /* ScrollViewController.swift */; };
+		9488FFC12C53668400163578 /* LegacyOSPreviewFix_DesignTime+BackDeploy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488FFC02C53668400163578 /* LegacyOSPreviewFix_DesignTime+BackDeploy.swift */; };
+		9488FFC32C53684500163578 /* ViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488FFC22C53684500163578 /* ViewPreview.swift */; };
+		9488FFC82C53685900163578 /* NavigationControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488FFC42C53685900163578 /* NavigationControllerPreview.swift */; };
+		9488FFC92C53685900163578 /* TabBarControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488FFC52C53685900163578 /* TabBarControllerPreview.swift */; };
+		9488FFCA2C53685900163578 /* PreviewTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488FFC62C53685900163578 /* PreviewTabBarItem.swift */; };
+		9488FFCB2C53685900163578 /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488FFC72C53685900163578 /* ViewControllerPreview.swift */; };
+		9488FFCF2C5372DE00163578 /* MyScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488FFCE2C5372DE00163578 /* MyScrollableStackView.swift */; };
+		9488FFD12C53775A00163578 /* MyGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488FFD02C53775A00163578 /* MyGridView.swift */; };
+		9488FFD32C5380A800163578 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488FFD22C5380A800163578 /* RowView.swift */; };
+		9488FFD62C53829700163578 /* AppHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488FFD52C53829700163578 /* AppHelper.swift */; };
 		94B2FD752C52948700637C0E /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2FD742C52948600637C0E /* AppViewModel.swift */; };
 		94B2FD782C5294B500637C0E /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2FD772C5294B500637C0E /* EntryViewController.swift */; };
 		94B2FD7A2C52978600637C0E /* Media.xcassets in Sources */ = {isa = PBXBuildFile; fileRef = 94B2FD792C5295E700637C0E /* Media.xcassets */; };
@@ -40,6 +50,17 @@
 		946CF7BF2C52E2A400EB22AD /* MyScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
 		946CF7C12C52E5BD00EB22AD /* MyUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUILabel.swift; sourceTree = "<group>"; };
 		946CF7C32C52EEDD00EB22AD /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		9488FFC02C53668400163578 /* LegacyOSPreviewFix_DesignTime+BackDeploy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LegacyOSPreviewFix_DesignTime+BackDeploy.swift"; sourceTree = "<group>"; };
+		9488FFC22C53684500163578 /* ViewPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPreview.swift; sourceTree = "<group>"; };
+		9488FFC42C53685900163578 /* NavigationControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerPreview.swift; sourceTree = "<group>"; };
+		9488FFC52C53685900163578 /* TabBarControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarControllerPreview.swift; sourceTree = "<group>"; };
+		9488FFC62C53685900163578 /* PreviewTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewTabBarItem.swift; sourceTree = "<group>"; };
+		9488FFC72C53685900163578 /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
+		9488FFCD2C53689200163578 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9488FFCE2C5372DE00163578 /* MyScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScrollableStackView.swift; sourceTree = "<group>"; };
+		9488FFD02C53775A00163578 /* MyGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGridView.swift; sourceTree = "<group>"; };
+		9488FFD22C5380A800163578 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		9488FFD52C53829700163578 /* AppHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHelper.swift; sourceTree = "<group>"; };
 		94B2FD742C52948600637C0E /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		94B2FD772C5294B500637C0E /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		94B2FD792C5295E700637C0E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -79,6 +100,8 @@
 		4AC2E4F58297291B89B71DDC = {
 			isa = PBXGroup;
 			children = (
+				9488FFD42C53828B00163578 /* helper */,
+				9488FFCC2C53686500163578 /* preview */,
 				94E9243A2C521B6B0042851D /* AppDelegate.swift */,
 				94D512102C52C5050015FA5B /* ext */,
 				94B2FD792C5295E700637C0E /* Media.xcassets */,
@@ -88,6 +111,30 @@
 				94E924372C5218F80042851D /* Resources */,
 				0B50D0FB51E3678FD03FC4E9 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		9488FFCC2C53686500163578 /* preview */ = {
+			isa = PBXGroup;
+			children = (
+				9488FFCD2C53689200163578 /* README.md */,
+				9488FFC42C53685900163578 /* NavigationControllerPreview.swift */,
+				9488FFC62C53685900163578 /* PreviewTabBarItem.swift */,
+				9488FFC52C53685900163578 /* TabBarControllerPreview.swift */,
+				9488FFC72C53685900163578 /* ViewControllerPreview.swift */,
+				9488FFC22C53684500163578 /* ViewPreview.swift */,
+				94E924492C52215C0042851D /* UIViewControllerExtension.swift */,
+				9465FF442C522D9C00F3895F /* UIViewPreviewWrapper.swift */,
+				9488FFC02C53668400163578 /* LegacyOSPreviewFix_DesignTime+BackDeploy.swift */,
+			);
+			path = preview;
+			sourceTree = "<group>";
+		};
+		9488FFD42C53828B00163578 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				9488FFD52C53829700163578 /* AppHelper.swift */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 		94B2FD732C52947A00637C0E /* model */ = {
@@ -120,6 +167,9 @@
 				94D512112C52D7410015FA5B /* VerticalView.swift */,
 				946CF7BF2C52E2A400EB22AD /* MyScrollView.swift */,
 				946CF7C12C52E5BD00EB22AD /* MyUILabel.swift */,
+				9488FFCE2C5372DE00163578 /* MyScrollableStackView.swift */,
+				9488FFD02C53775A00163578 /* MyGridView.swift */,
+				9488FFD22C5380A800163578 /* RowView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -128,8 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				D38A6AC955EC6767DA2EE81B /* ColorExtensions.swift */,
-				94E924492C52215C0042851D /* UIViewControllerExtension.swift */,
-				9465FF442C522D9C00F3895F /* UIViewPreviewWrapper.swift */,
 			);
 			path = ext;
 			sourceTree = "<group>";
@@ -202,20 +250,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9488FFCA2C53685900163578 /* PreviewTabBarItem.swift in Sources */,
+				9488FFC92C53685900163578 /* TabBarControllerPreview.swift in Sources */,
 				94B2FD7A2C52978600637C0E /* Media.xcassets in Sources */,
 				94E9243B2C521B6B0042851D /* AppDelegate.swift in Sources */,
 				9465FF452C522D9C00F3895F /* UIViewPreviewWrapper.swift in Sources */,
 				115F85EDCC3F1059BEF2CD47 /* BaseView.swift in Sources */,
+				9488FFD12C53775A00163578 /* MyGridView.swift in Sources */,
 				94B2FD782C5294B500637C0E /* EntryViewController.swift in Sources */,
+				9488FFCB2C53685900163578 /* ViewControllerPreview.swift in Sources */,
 				94E924432C521F370042851D /* ButtonView.swift in Sources */,
+				9488FFC12C53668400163578 /* LegacyOSPreviewFix_DesignTime+BackDeploy.swift in Sources */,
+				9488FFD62C53829700163578 /* AppHelper.swift in Sources */,
+				9488FFC82C53685900163578 /* NavigationControllerPreview.swift in Sources */,
 				6112491021A54BC6E9679B9A /* ColorExtensions.swift in Sources */,
 				946CF7C42C52EEDD00EB22AD /* ScrollViewController.swift in Sources */,
+				9488FFC32C53684500163578 /* ViewPreview.swift in Sources */,
+				9488FFCF2C5372DE00163578 /* MyScrollableStackView.swift in Sources */,
 				EFF03B43E9A6B55CB7D9F40B /* LoginViewController.swift in Sources */,
 				D5134908923797635FFEB327 /* ProfileViewController.swift in Sources */,
 				9465FF432C522BA000F3895F /* CenteredView.swift in Sources */,
 				94B2FD752C52948700637C0E /* AppViewModel.swift in Sources */,
 				94E924452C521F500042851D /* DemoStore.swift in Sources */,
 				946CF7C02C52E2A400EB22AD /* MyScrollView.swift in Sources */,
+				9488FFD32C5380A800163578 /* RowView.swift in Sources */,
 				94D512122C52D7410015FA5B /* VerticalView.swift in Sources */,
 				94E9244A2C52215C0042851D /* UIViewControllerExtension.swift in Sources */,
 				94E924412C521F170042851D /* PostView.swift in Sources */,
@@ -236,6 +294,7 @@
 				DEVELOPMENT_TEAM = RSD67YH647;
 				EXECUTABLE_NAME = rxswift_snapkit;
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,6 +380,7 @@
 				DEVELOPMENT_TEAM = RSD67YH647;
 				EXECUTABLE_NAME = rxswift_snapkit;
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

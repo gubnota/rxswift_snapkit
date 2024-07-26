@@ -2,7 +2,7 @@ import UIKit
 import SnapKit
 
 class ScrollViewController: UIViewController {
-    private var tableView: MyTableView!
+    private var scrollableStackView: MyScrollableStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,10 +12,11 @@ class ScrollViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = .white
         // Create labels with rounded corners using a closure
-        let labelTexts = ["Label 1", "Label 2", "Label 3","Label 1", "Label 2", "Label 3","Label 1", "Label 2", "Label 3","Label 1"]
-        let labelColors: [UIColor] = [UIColor(hex: "#0d8363"), UIColor(hex: "#630d83"),  UIColor(hex: "#d33086"),UIColor(hex: "#0d8363"), UIColor(hex: "#630d83"),  UIColor(hex: "#d33086"),UIColor(hex: "#0d8363"), UIColor(hex: "#630d83"),  UIColor(hex: "#d33086"),UIColor(hex: "#0d8363")]
+        let labelTexts = ["Label 1", "Label 2", "Label 3", "Label 1", "Label 2", "Label 3", "Label 1", "Label 2", "Label 3", "Label 1"]
+        let labelColors: [UIColor] = [UIColor(hex: "#0d8363"), UIColor(hex: "#630d83"), UIColor(hex: "#d33086"), UIColor(hex: "#0d8363"), UIColor(hex: "#630d83"), UIColor(hex: "#d33086"), UIColor(hex: "#0d8363"), UIColor(hex: "#630d83"), UIColor(hex: "#d33086"), UIColor(hex: "#0d8363")]
+        
         let labels: [MyUILabel] = labelTexts.enumerated().map { index, text in
-            let label = MyUILabel(customHeight: 64.0)
+            let label = MyUILabel(customHeight: index%2==0 ? 128.0 : 64.0)
             label.text = text
             label.backgroundColor = labelColors[index]
             label.textAlignment = .center
@@ -23,22 +24,23 @@ class ScrollViewController: UIViewController {
             label.layer.masksToBounds = true
             return label
         }
-
-
-        tableView = MyTableView(customLabels: labels) { [weak self] selectedText, index in
+//padding: UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10))
+        scrollableStackView = MyScrollableStackView(views: labels, onViewTapped: { [weak self] selectedText, index in
             let alert = UIAlertController(title: "Label Selected", message: "Text: \(selectedText)\nID: \(index)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             self?.present(alert, animated: true, completion: nil)
-        }
+        })
 
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+        view.addSubview(scrollableStackView)
+        scrollableStackView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
     }
 }
+
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
+@available(iOS 13.0, *)
 struct ScrollViewControllerPreview: PreviewProvider {
     static var previews: some View {
         ScrollViewController().toPreview()
