@@ -2,6 +2,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import UserNotifications
 
 class ProfileViewController: UIViewController {
     private let centeredView = CenteredView()
@@ -14,6 +15,11 @@ class ProfileViewController: UIViewController {
     private lazy var showScrollViewButton = ButtonView(label: "Scroll View") { [weak self] in
         self?.showScrollViewTapped()
     }
+    
+    private lazy var setNotificationButton = ButtonView(label: "Set Notification") { [weak self] in
+        self?.setNotificationTapped()
+    }
+    
     private var username: String
     private var password: String
     private var timer: Timer?
@@ -45,51 +51,16 @@ class ProfileViewController: UIViewController {
         
         usernameLabel.text = "Username: \(username)"
         passwordLabel.text = "Password: \(password)"
-//        
-//        
-//        let logoutButton = ButtonView(label: "Logout") { [weak self] in
-//            self?.logoutTapped()
-//        }
-        let verticalView = VerticalView(views: [usernameLabel, passwordLabel, showScrollViewButton, logoutButton],
-                                                 gap: 20, leadingOffset: 16, trailingOffset: 16,
-                                                 verticalAlignment: .top, verticalOffset: 20)
+        
+        let verticalView = VerticalView(views: [usernameLabel, passwordLabel, showScrollViewButton, setNotificationButton, logoutButton],
+                                        gap: 20, leadingOffset: 16, trailingOffset: 16,
+                                        verticalAlignment: .top, verticalOffset: 20)
 
-                view.addSubview(verticalView)
-                
-                verticalView.snp.makeConstraints { make in
-                    make.edges.equalTo(view.safeAreaLayoutGuide)
-                }
-//
-//        centeredView.addSubview(usernameLabel)
-//        centeredView.addSubview(passwordLabel)
-//        centeredView.addSubview(showScrollViewButton)
-//        centeredView.addSubview(logoutButton)
-//
-//        view.addSubview(centeredView)
-//        
-//        centeredView.snp.makeConstraints { make in
-//            make.edges.equalTo(view.safeAreaLayoutGuide)
-//        }
-//        
-//        usernameLabel.snp.makeConstraints { make in
-//            make.top.equalTo(centeredView.snp.top).offset(20)
-//            make.leading.trailing.equalTo(centeredView).inset(16)
-//        }
-//        
-//        passwordLabel.snp.makeConstraints { make in
-//            make.top.equalTo(usernameLabel.snp.bottom).offset(20)
-//            make.leading.trailing.equalTo(centeredView).inset(16)
-//        }
-//        
-//        showScrollViewButton.snp.makeConstraints { make in
-//            make.top.equalTo(passwordLabel.snp.bottom).offset(30)
-//            make.centerX.equalTo(centeredView)
-//        }
-//        
-//        logoutButton.snp.makeConstraints { make in
-//            make.top.equalTo(showScrollViewButton.snp.bottom).offset(30)
-//            make.centerX.equalTo(centeredView)
-//        }
+        view.addSubview(verticalView)
+        
+        verticalView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
 
     private func startUsernameUpdateTimer() {
@@ -113,17 +84,39 @@ class ProfileViewController: UIViewController {
     }
 
     @objc private func logoutTapped() {
-//        dismiss(animated: true, completion: nil)
-//        viewModel?.lastUsername.accept(username)
-//        viewModel?.lastPassword.accept(password)
-        print("logout tapped")
         navigationController?.popViewController(animated: true)
     }
+    
     @objc private func showScrollViewTapped() {
-        let scrollVC = ScrollViewController() // Assuming ScrollViewController exists
+        let scrollVC = ScrollViewController()
         navigationController?.pushViewController(scrollVC, animated: true)
-        print("showScrollViewTapped")
     }
+
+    @objc private func setNotificationTapped() {
+//        let notificationVC = SetNotificationViewController()
+//        navigationController?.pushViewController(notificationVC, animated: true)
+
+        let content = UNMutableNotificationContent()
+        content.title = "Reminder"
+        content.body = "This is your reminder notification!"
+            content.sound = .default
+        
+        // Trigger the notification after 5 seconds
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        // Create the request
+        let request = UNNotificationRequest(identifier: "FiveSecondNotification", content: content, trigger: trigger)
+        
+        // Schedule the notification
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Notification scheduling failed: \(error)")
+            } else {
+                print("Notification scheduled")
+            }
+        }
+    }
+
 }
 
 #if canImport(SwiftUI) && DEBUG

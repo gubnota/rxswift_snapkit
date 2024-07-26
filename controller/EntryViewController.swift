@@ -5,7 +5,8 @@ class EntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        NotificationHandler.shared.requestNotificationAuthorization()
+
         // Navigate to the initial view controller
 //        navigateToInitialViewController()
         showLoginViewController()
