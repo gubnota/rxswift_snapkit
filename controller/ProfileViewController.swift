@@ -128,6 +128,7 @@ class ProfileViewController: UIViewController {
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
+@available(iOS 13.0, *)
 struct ProfileViewControllerPreview: PreviewProvider {
     static var previews: some View {
         ProfileViewController(username: "admin", password: "admin").toPreview()

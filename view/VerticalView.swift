@@ -8,19 +8,21 @@ class VerticalView: BaseView {
     private let trailingOffset: CGFloat
     private let verticalAlignment: VerticalAlignment
     private let verticalOffset: CGFloat
+    private let onTapHandler: ((Int, String) -> Void)?
 
     enum VerticalAlignment {
         case top
         case bottom
     }
 
-    init(views: [UIView], gap: CGFloat = 10, leadingOffset: CGFloat = 20, trailingOffset: CGFloat = 20, verticalAlignment: VerticalAlignment = .top, verticalOffset: CGFloat = 20) {
+    init(views: [UIView], gap: CGFloat = 10, leadingOffset: CGFloat = 20, trailingOffset: CGFloat = 20, verticalAlignment: VerticalAlignment = .top, verticalOffset: CGFloat = 20, onTapHandler: ((Int, String) -> Void)? = nil) {
         self.views = views
         self.gap = gap
         self.leadingOffset = leadingOffset
         self.trailingOffset = trailingOffset
         self.verticalAlignment = verticalAlignment
         self.verticalOffset = verticalOffset
+        self.onTapHandler = onTapHandler
         super.init(frame: .zero)
         setupView()
     }
@@ -32,6 +34,11 @@ class VerticalView: BaseView {
     private func setupView() {
         for (index, view) in views.enumerated() {
             addSubview(view)
+            view.isUserInteractionEnabled = true
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:)))
+            view.addGestureRecognizer(tapGesture)
+            view.tag = index  // Tag the view with its index
+
             view.snp.makeConstraints { make in
                 make.leading.equalToSuperview().offset(leadingOffset)
                 make.trailing.equalToSuperview().offset(-trailingOffset)
@@ -41,7 +48,6 @@ class VerticalView: BaseView {
                     case .top:
                         make.top.equalToSuperview().offset(verticalOffset)
                     case .bottom:
-                        // Don't set the top constraint for the first view when aligning to bottom
                         break
                     }
                 } else {
@@ -59,34 +65,41 @@ class VerticalView: BaseView {
             }
         }
     }
+
+    @objc private func viewTapped(_ sender: UITapGestureRecognizer) {
+        if let view = sender.view, let handler = onTapHandler {
+            let text = (view as? UILabel)?.text ?? view.backgroundColor?.toHexString() ?? "No text"
+            handler(view.tag, text)
+        }
+    }
 }
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 
+@available(iOS 13.0, *)
 struct StackView_Previews: PreviewProvider {
     static var previews: some View {
         UIViewPreview {
-            // Create labels with rounded corners using a closure
-            let labelTexts = ["Label 1", "Label 2", "Label 3"]
-            let labelColors: [UIColor] = [UIColor(hex: "#0d8363"), UIColor(hex: "#630d83"),  UIColor(hex: "#d33086")]
-            let labels: [MyUILabel] = labelTexts.enumerated().map { index, text in
-                let label = MyUILabel(customHeight: 64.0)
-                label.text = text
-                label.backgroundColor = labelColors[index]
-                label.textAlignment = .center
-                label.layer.cornerRadius = 8.0
-                label.layer.masksToBounds = true
-                return label
+            let views = AppHelper.shared.generateViews(
+                withTexts: ["Label 1", "Label 2", "Label 3"],
+                colors: [UIColor(hex: "#0d8363"), UIColor(hex: "#630d83"), UIColor(hex: "#d33086")]
+            )
+            let sv = VerticalView(
+                views: views,
+                gap: 15,
+                leadingOffset: 10,
+                trailingOffset: 10,
+                verticalAlignment: .bottom,
+                verticalOffset: 20
+            ) { index, info in
+                AppHelper.shared.showAlert(title: "Tapped at \(index)", message: "Info: \(info)")
             }
-
-            let sv = VerticalView(views: labels, gap: 15, leadingOffset: 10, trailingOffset: 10, verticalAlignment: .bottom, verticalOffset: 20)
             sv.backgroundColor = UIColor(hex: "f1f9f0")
             sv.setRoundedCorners(radius: 28.0)
             return sv
         }
         .previewLayout(.sizeThatFits)
-//        .frame(width: 300, height: 400)
         .padding()
     }
 }

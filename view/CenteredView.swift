@@ -14,7 +14,6 @@ class CenteredView: BaseView {
     private func setupView() {
         // Set background color
         backgroundColor = UIColor(hex: "#f0f0fd")
-        setRoundedCorners(radius: 10)
         if (superview != nil){
             // Set up constraints only when the view is added to a superview
             self.snp.makeConstraints { make in
@@ -33,7 +32,13 @@ class CenteredView: BaseView {
         }
 
     }
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        // Apply rounded corners if iOS 13 or later
+        if #available(iOS 13.0, *) {
+            self.setRoundedCorners(radius: 40.0)
+        }
+    }
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         setupView()
@@ -42,14 +47,22 @@ class CenteredView: BaseView {
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
+@available(iOS 13.0, *)
 struct CenteredView_Previews: PreviewProvider {
     static var previews: some View {
-        UIViewPreview {
-            return CenteredView()
-        }
-        .previewLayout(.sizeThatFits)
-        .frame(width: 300, height: 400) // Set desired preview size
-        .padding()
+        UIViewPreview{CenteredView()}
+            .previewLayout(.fixed(width: 300, height: 400))
     }
 }
+
+//struct CenteredView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            UIViewPreview {
+//                return CenteredView()
+//            }
+//            .previewLayout(.sizeThatFits)
+//            .frame(width: 300, height: 400) // Set desired preview size
+//            .padding()
+//        }
+//    }
 #endif

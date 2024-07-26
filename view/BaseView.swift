@@ -5,7 +5,14 @@ class BaseView: UIView {
     private var heightConstraint: Constraint?
 
     // Custom styles for all UIViews
+    override init(frame: CGRect) {
+        super.init(frame: frame);
+        self.backgroundColor = .clear
+    }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     // Method to set rounded corners
     func setRoundedCorners(radius: CGFloat) {
         self.layer.cornerRadius = radius

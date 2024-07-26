@@ -50,15 +50,12 @@ class ButtonView: UIView {
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
-
+@available(iOS 13.0, *)
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
         UIViewPreview {
             ButtonView(label: "Click me") {
-                print("Button clicked!")
-                let alert = UIAlertController(title: "Button clicked!", message: "Text: Button clicked!", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default))
-                UIApplication.shared.windows.first?.rootViewController!.present(alert, animated: true, completion: nil)
+                    AppHelper.shared.showAlert(title: "Button", message: "Text: button clicked!")
             }
         }
         .previewLayout(.sizeThatFits)

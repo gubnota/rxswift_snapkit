@@ -14,7 +14,7 @@ targets:
   rxswift_snapkit:
     type: application
     platform: iOS
-    sources: [AppDelegate.swift, controller, ext, model, view, Resources/, Media.xcassets/]
+    sources: [AppDelegate.swift, helper/, preview/, controller/, ext/, model/, view/, Resources/, Media.xcassets/]
     resources: [Resources/, Media.xcassets/]
     dependencies:
       - package: RxSwift

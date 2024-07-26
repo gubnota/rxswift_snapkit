@@ -89,15 +89,15 @@ class MyTableView: UIView, UITableViewDataSource, UITableViewDelegate {
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
-
-struct MyScrollView_Previews: PreviewProvider {
+@available(iOS 13.0, *)
+struct MyTableView_Previews: PreviewProvider {
     static var previews: some View {
         UIViewPreview {
             // Create labels with rounded corners using a closure
             let labelTexts = ["Label 1", "Label 2", "Label 3","Label 1", "Label 2", "Label 3","Label 1", "Label 2", "Label 3","Label 1"]
             let labelColors: [UIColor] = [UIColor(hex: "#0d8363"), UIColor(hex: "#630d83"),  UIColor(hex: "#d33086"),UIColor(hex: "#0d8363"), UIColor(hex: "#630d83"),  UIColor(hex: "#d33086"),UIColor(hex: "#0d8363"), UIColor(hex: "#630d83"),  UIColor(hex: "#d33086"),UIColor(hex: "#0d8363")]
             let labels: [MyUILabel] = labelTexts.enumerated().map { index, text in
-                let label = MyUILabel(customHeight: 64.0)
+                let label = MyUILabel(customHeight: index%2==0 ? 100.0 : 64.0)
                 label.text = text
                 label.backgroundColor = labelColors[index]
                 label.textAlignment = .center
