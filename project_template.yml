@@ -1,6 +1,6 @@
-name: my_own_proj
+name: rxswift_snapkit
 options:
-  bundleIdPrefix: net.fenki.default2
+  # bundleIdPrefix: your_id
   deploymentTarget:
     iOS: '13.0'
 packages:
@@ -11,7 +11,7 @@ packages:
     url: https://github.com/SnapKit/SnapKit.git
     from: "5.0.0"
 targets:
-  my_own_proj:
+  rxswift_snapkit:
     type: application
     platform: iOS
     sources: [AppDelegate.swift, controller, ext, model, view, Resources/, Media.xcassets/]
@@ -23,8 +23,8 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: "Resources/Info.plist"
-        PRODUCT_BUNDLE_IDENTIFIER: net.fenki.default2
+        # PRODUCT_BUNDLE_IDENTIFIER: "yourid"
         SWIFT_VERSION: "5.0"
         DEVELOPMENT_LANGUAGE: "en"
-        EXECUTABLE_NAME: "my_own_proj"
+        EXECUTABLE_NAME: "rxswift_snapkit"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
