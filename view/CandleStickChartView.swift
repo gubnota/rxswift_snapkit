@@ -67,7 +67,7 @@ struct CandlestickChartView_Previews: PreviewProvider {
            let candleDataArray = try? JSONDecoder().decode(CandleDataArray.self, from: data) {
             
             return candleDataArray.candles.data.map {
-                CandleDataEntry(open: $0.open, close: $0.close, high: $0.high, low: $0.low, date: $0.date)
+                CandleDataEntry(open: $0.open, close: $0.close, high: $0.high, low: $0.low, date: $0.date, volume: $0.volume)
             }
         }
         return []

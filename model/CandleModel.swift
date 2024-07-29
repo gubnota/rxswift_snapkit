@@ -6,6 +6,7 @@ struct CandleDataEntry {
     var high: Double
     var low: Double
     var date: Date
+    var volume: Double // Add volume property
 }
 
 struct CandleDataArray: Codable {
@@ -63,7 +64,7 @@ extension Candles {
             let high = try nestedContainer.decode(Double.self)
             let low = try nestedContainer.decode(Double.self)
             _ = try nestedContainer.decode(Double.self) // Skip value
-            _ = try nestedContainer.decode(Double.self) // Skip volume
+            let volume = try nestedContainer.decode(Double.self) // Decode volume
             let beginString = try nestedContainer.decode(String.self)
             _ = try nestedContainer.decode(String.self) // Skip end
             
@@ -71,7 +72,7 @@ extension Candles {
                 continue
             }
             
-            let entry = CandleDataEntry(open: open, close: close, high: high, low: low, date: date)
+            let entry = CandleDataEntry(open: open, close: close, high: high, low: low, date: date, volume: volume)
             entries.append(entry)
         }
         
@@ -95,7 +96,7 @@ extension Candles {
             try nestedContainer.encode(entry.high)
             try nestedContainer.encode(entry.low)
             try nestedContainer.encode(0.0) // Placeholder for value
-            try nestedContainer.encode(0.0) // Placeholder for volume
+            try nestedContainer.encode(entry.volume) // Encode volume
             let dateString = dateFormatter.string(from: entry.date)
             try nestedContainer.encode(dateString)
             try nestedContainer.encode(dateString) // Placeholder for end date, use actual if available
