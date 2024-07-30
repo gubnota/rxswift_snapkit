@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>svat</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#0DD2D2" offset="0%"></stop>
+            <stop stop-color="#05B5CD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="svat" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF00" x="0" y="0" width="1024" height="1024"></rect>
+        <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="0" width="1024" height="1024" rx="512"></rect>
+        <path d="M216.942949,842.520039 C277.423349,797.1356 357.817436,768.925405 458.125209,757.889454 C608.586868,741.335527 681.676148,569.697242 681.676148,569.697242 C681.676148,569.697242 527.360551,664.90581 509.956275,636.173494 C508.813232,635.144091 742.745497,575.065411 782.014169,351.666595 C709.259704,416.173446 579.985416,483.633829 561.349061,474.807898 C695.635209,398.287699 847.725885,287.521958 801.033596,180.520039 C746.791289,244.426975 653.536003,294.32059 421.24464,404.54244 C266.383731,478.023673 198.283168,624.016206 216.942949,842.520039 Z" id="Path-3" fill="#FFFFFF"></path>
+    </g>
+</svg>
