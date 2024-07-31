@@ -8,6 +8,8 @@ class FlashCardGridViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Show the navigation bar
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         setupFlashCardGridView()
     }
 
@@ -47,8 +49,3 @@ class FlashCardGridViewController: UIViewController {
     }
 }
 
-struct FlashCardGridViewControllerPreview: PreviewProvider {
-    static var previews: some View {
-        FlashCardGridViewController().toPreview()
-    }
-}

@@ -46,7 +46,8 @@ class LoginViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
-
+        // Unhide the navigation bar
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         // Set placeholders and styling for the text fields
         usernameTextField.placeholder = "Username"
         usernameTextField.borderStyle = .roundedRect
@@ -135,12 +136,3 @@ class LoginViewController: UIViewController {
     }
 }
 
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-@available(iOS 13.0, *)
-struct LoginViewControllerPreview: PreviewProvider {
-    static var previews: some View {
-        LoginViewController().toPreview()
-    }
-}
-#endif

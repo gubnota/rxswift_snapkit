@@ -55,12 +55,3 @@ class CountdownView: BaseView {
         viewModel?.startCountdown(from: 120) // Example: start from 2 minutes
     }
 }
-
-import SwiftUI
-
-struct CountdownView_Previews: PreviewProvider {
-    static var previews: some View {
-        UIViewPreview{CountdownView()}
-            .previewLayout(.fixed(width: 300, height: 400))
-    }
-}

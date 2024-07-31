@@ -9,7 +9,7 @@ class EntryViewController: UIViewController {
 
         // Navigate to the initial view controller
 //        navigateToInitialViewController()
-        showLoginViewController()
+        configureForPreview()
 
     }
     
@@ -39,19 +39,9 @@ class EntryViewController: UIViewController {
     }
     // Method to configure the view controller for preview purposes
     func configureForPreview() {
-        showLoginViewController()
+        navigationController?.setViewControllers([IntroViewController()], animated: false)
+//        showLoginViewController()
+        
     }
 }
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-@available(iOS 13.0, *)
-struct EntryViewControllerPreview: PreviewProvider {
-    static var previews: some View {
-        UINavigationController(rootViewController: EntryViewController()).toPreview { vc in
-            if let vc = vc as? EntryViewController {
-                vc.configureForPreview()
-            }
-        }
-    }
-}
-#endif
+
