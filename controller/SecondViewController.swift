@@ -29,8 +29,8 @@ class SecondViewController: UIViewController {
     }
 
     private func bindViewModel() {
-        viewModel?.isLightOn
-            .map { $0 ? UIColor.yellow : UIColor.blue }
+        viewModel?.lightBulbState
+            .map { $0 == .on ? UIColor.yellow : UIColor.blue }
             .bind(to: view.rx.backgroundColor)
             .disposed(by: disposeBag)
     }
