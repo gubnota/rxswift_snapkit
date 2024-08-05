@@ -18,6 +18,9 @@ targets:
     resources: [Resources/, Media.xcassets/]
     dependencies:
       - package: RxSwift
+        products:
+          - RxSwift
+          - RxCocoa
       - package: SnapKit
       # - sdk: XCTest.framework
     settings:
