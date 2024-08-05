@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>lightbulb_off</title>
+    <g id="lightbulb_off" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#949494" cx="40" cy="40" r="35"></circle>
+        <path d="M59,40 C59,50.4934102 50.4934102,59 40,59 C29.5065898,59 21,50.4934102 21,40 C21,30.8786739 27.4274417,23.2585573 36.000231,21.4217443 L36.0002573,26.5796808 C30.2171472,28.3006968 26,33.6578647 26,40 C26,47.7319865 32.2680135,54 40,54 C47.7319865,54 54,47.7319865 54,40 C54,33.6582313 49.7833403,28.3013162 44.0007456,26.5799793 L44.0007695,21.4219587 C52.5730583,23.2591502 59,30.8790287 59,40 Z" id="Combined-Shape-Copy" fill="#FFFFFF" fill-rule="nonzero"></path>
+        <rect id="Rectangle-Copy" stroke="#FFFFFF" fill="#FFFFFF" x="38.5" y="17.5" width="3" height="11"></rect>
+    </g>
+</svg>

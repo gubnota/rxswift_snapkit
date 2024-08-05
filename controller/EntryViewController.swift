@@ -39,7 +39,7 @@ class EntryViewController: UIViewController {
     }
     // Method to configure the view controller for preview purposes
     func configureForPreview() {
-        navigationController?.setViewControllers([IntroViewController()], animated: false)
+        navigationController?.setViewControllers([LightBulbViewController()], animated: false)
 //        showLoginViewController()
         
     }
