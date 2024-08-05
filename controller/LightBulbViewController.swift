@@ -103,9 +103,10 @@ class LightBulbViewController: UIViewController {
             .disposed(by: disposeBag)
 
         intervalSlider.rx.value
-            .bind(to: viewModel.intervalValue)
-            .disposed(by: disposeBag)
-
+              .map { round($0 * 2) / 2 } // Rounding to nearest 0.5
+              .bind(to: viewModel.intervalValue)
+              .disposed(by: disposeBag)
+        
         triggerButton.rx.tap
             .bind { [weak self] in
                 self?.viewModel.toggleInterval()
